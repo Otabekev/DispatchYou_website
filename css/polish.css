@@ -110,3 +110,13 @@ input[type="text"], input[type="email"], input[type="tel"], textarea { border-ra
 
 /* Keep hyphenated phrases on one line */
 .nowrap { white-space: nowrap; }
+
+/* ---------- Equipment quick-form: contact fields ---------- */
+.eq-quote__contact { display: grid; gap: 12px; margin-bottom: 20px; }
+.eq-quote__contact input {
+  width: 100%; height: 48px; padding: 0 14px; font: inherit; font-size: 16px;
+  color: var(--dark); background: #fff; border: 1px solid #d7dae0; border-radius: 8px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.eq-quote__contact input:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255, 119, 20, .15); }
+.eq-quote__contact input::placeholder { color: #9aa1ab; }

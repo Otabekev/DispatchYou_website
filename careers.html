@@ -423,7 +423,7 @@
 <section class="apply-section" id="apply">
   <div class="wrap">
     <h2 class="page-title reveal">Job application form</h2>
-    <p class="page-sub reveal delay-1">Takes about three minutes. A resume is optional if your LinkedIn profile tells the story.</p>
+    <p class="page-sub reveal delay-1">Takes about three minutes. Add a LinkedIn profile if it tells your story better.</p>
 
     <div class="apply-form">
       <div class="apply-form__row">
@@ -459,19 +459,6 @@
               </div>
             </div>
 
-            <div class="apply-form__form-group">
-              <div class="apply-form__form-file" id="fileBox">
-                <div>
-                  <div class="floating-label">
-                    <input type="text" id="your-resume" placeholder=" " readonly tabindex="-1">
-                    <label for="your-resume">Upload your resume</label>
-                  </div>
-                </div>
-                <input type="file" id="resumeFile" name="resume" accept=".doc,.docx,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf">
-                <button type="button" class="btn btn--secondary" id="browseBtn">Browse</button>
-              </div>
-              <p class="apply-form__form-note">*PDF or Word, up to 20 MB. Optional if you added a LinkedIn profile.</p>
-            </div>
 
             <div class="apply-form__form-group">
               <div class="floating-label floating-label--area">
@@ -556,7 +543,7 @@
     <div class="newsletter">
       <h2>SUBSCRIBE TO OUR<br>NEWSLETTER</h2>
       <form class="newsletter__form" id="newsForm">
-        <input type="email" placeholder="Email address" required>
+        <input type="email" name="email" placeholder="Email address" required>
         <button type="submit" class="btn btn--white">SUBSCRIBE <svg viewBox="0 0 12 12" width="12" height="12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
       </form>
     </div>
@@ -614,6 +601,7 @@
 </div>
 
 <script src="script.js"></script>
+<script src="forms.js"></script>
 <script>
 /* ---------- Careers page (page-specific) ---------- */
 (function () {
@@ -702,30 +690,6 @@
   [name, email, phone].forEach(i => i.addEventListener('input', refresh));
   refresh();
 
-  /* resume: Browse button, drag & drop, size check */
-  const fileBox = document.getElementById('fileBox');
-  const fileInput = document.getElementById('resumeFile');
-  const fileName = document.getElementById('your-resume');
-  const note = fileBox.parentElement.querySelector('.apply-form__form-note');
-  const noteText = note.textContent;
-  const showFile = (f) => {
-    if (!f) return;
-    if (f.size > 20 * 1024 * 1024) {
-      fileName.value = '';
-      note.textContent = f.name + ' is larger than 20 MB. Please pick a smaller file.';
-      note.style.color = '#d9480f';
-      return;
-    }
-    fileName.value = f.name;
-    note.textContent = noteText;
-    note.style.color = '';
-  };
-  document.getElementById('browseBtn').addEventListener('click', () => fileInput.click());
-  fileName.addEventListener('click', () => fileInput.click());
-  fileInput.addEventListener('change', () => showFile(fileInput.files[0]));
-  ['dragenter', 'dragover'].forEach(ev => fileBox.addEventListener(ev, (e) => { e.preventDefault(); fileBox.classList.add('is-drag'); }));
-  ['dragleave', 'drop'].forEach(ev => fileBox.addEventListener(ev, (e) => { e.preventDefault(); fileBox.classList.remove('is-drag'); }));
-  fileBox.addEventListener('drop', (e) => { if (e.dataTransfer && e.dataTransfer.files[0]) showFile(e.dataTransfer.files[0]); });
 
   /* demo submit: validate, then swap the fields for the thank-you panel */
   form.addEventListener('submit', (e) => {

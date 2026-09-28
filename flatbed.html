@@ -189,6 +189,11 @@
               <option>12+ months</option>
             </select>
           </div>
+          <div class="eq-quote__contact">
+            <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
+            <input type="email" name="email" placeholder="Email" required aria-label="Email">
+            <input type="tel" name="phone" placeholder="Phone number" required aria-label="Phone number">
+          </div>
           <button type="submit" class="btn btn--gray btn--block">SCHEDULE A CALL <svg viewBox="0 0 12 12" width="12" height="12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
           <p class="form-msg" hidden>Thanks! A specialist will reach out shortly.</p>
         </form>
@@ -379,6 +384,11 @@
               <option>12+ months</option>
             </select>
           </div>
+          <div class="eq-quote__contact">
+            <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
+            <input type="email" name="email" placeholder="Email" required aria-label="Email">
+            <input type="tel" name="phone" placeholder="Phone number" required aria-label="Phone number">
+          </div>
           <button type="submit" class="btn btn--gray btn--block">SCHEDULE A CALL <svg viewBox="0 0 12 12" width="12" height="12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
           <p class="form-msg" hidden>Thanks! A specialist will reach out shortly.</p>
         </form>
@@ -486,7 +496,7 @@
     <div class="newsletter">
       <h2>SUBSCRIBE TO OUR<br>NEWSLETTER</h2>
       <form class="newsletter__form" id="newsForm">
-        <input type="email" placeholder="Email address" required>
+        <input type="email" name="email" placeholder="Email address" required>
         <button type="submit" class="btn btn--white">SUBSCRIBE <svg viewBox="0 0 12 12" width="12" height="12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
       </form>
     </div>
@@ -544,6 +554,7 @@
 </div>
 
 <script src="script.js"></script>
+<script src="forms.js"></script>
 <script>
 /* ---------- Equipment page: intro toggle, card sliders, rate counters (page-specific) ---------- */
 (function () {
