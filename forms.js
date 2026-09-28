@@ -13,19 +13,19 @@
    ============================================================ */
 
 (function () {
-  var ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';   /* <-- paste your Formspree ID here */
+  var ENDPOINT = 'https://formspree.io/f/mdekprng';   /* <-- paste your Formspree ID here */
 
   /* Not configured yet: leave the on-page confirmation as-is, send nothing. */
-  if (ENDPOINT.indexOf('YOUR_FORM_ID') !== -1) return;
+  if (ENDPOINT.indexOf('/f/') === -1) return;
 
   function subjectFor(form) {
     if (form.dataset.subject) return form.dataset.subject;
     var byId = {
-      newsForm:    'Framejoy Dispatch — newsletter signup',
-      contactForm: 'Framejoy Dispatch — contact message',
-      applyForm:   'Framejoy Dispatch — job application'
+      newsForm:    'DispatchYou — newsletter signup',
+      contactForm: 'DispatchYou — contact message',
+      applyForm:   'DispatchYou — job application'
     };
-    return byId[form.id] || 'Framejoy Dispatch — quote request';
+    return byId[form.id] || 'DispatchYou — quote request';
   }
 
   document.querySelectorAll('form').forEach(function (form) {
