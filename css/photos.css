@@ -31,7 +31,7 @@
 /* Split section images */
 .home-row__img { min-height: 380px; }
 .home-row__img > * { display: none !important; }
-.home-trusted .home-row__img { background-image: url(../images/team.jpg); }
+.home-trusted .home-row__img { background-image: url(../images/dispatcher.jpg); }
 .route        .home-row__img { background-image: url(../images/highway-mountains.jpg); }
 .beyond       .home-row__img { background-image: url(../images/warehouse.jpg); }
 .growth       .home-row__img { background-image: url(../images/fleet-yard.jpg); }
